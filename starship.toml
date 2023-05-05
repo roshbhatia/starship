@@ -1,0 +1,112 @@
+#       ___                       ___           ___           ___           ___                       ___   
+#      /  /\          ___        /  /\         /  /\         /  /\         /__/\        ___          /  /\  
+#     /  /:/_        /  /\      /  /::\       /  /::\       /  /:/_        \  \:\      /  /\        /  /::\ 
+#    /  /:/ /\      /  /:/     /  /:/\:\     /  /:/\:\     /  /:/ /\        \__\:\    /  /:/       /  /:/\:\
+#   /  /:/ /::\    /  /:/     /  /:/~/::\   /  /:/~/:/    /  /:/ /::\   ___ /  /::\  /__/::\      /  /:/~/:/
+#  /__/:/ /:/\:\  /  /::\    /__/:/ /:/\:\ /__/:/ /:/___ /__/:/ /:/\:\ /__/\  /:/\:\ \__\/\:\__  /__/:/ /:/ 
+#  \  \:\/:/~/:/ /__/:/\:\   \  \:\/:/__\/ \  \:\/:::::/ \  \:\/:/~/:/ \  \:\/:/__\/    \  \:\/\ \  \:\/:/  
+#   \  \::/ /:/  \__\/  \:\   \  \::/       \  \::/~~~~   \  \::/ /:/   \  \::/          \__\::/  \  \::/   
+#    \__\/ /:/        \  \:\   \  \:\        \  \:\        \__\/ /:/     \  \:\          /__/:/    \  \:\   
+#      /__/:/          \__\/    \  \:\        \  \:\         /__/:/       \  \:\         \__\/      \  \:\  
+#      \__\/                     \__\/         \__\/         \__\/         \__\/                     \__\/  
+
+add_newline = true  # Inserts a blank line between shell prompts
+
+format = """↓↓↓ $all"""  # Add custom formatting before other stuff
+
+# Drop ugly default prompt characters
+[character]
+success_symbol = ""
+error_symbol = ""
+
+[aws]
+format = 'on [$symbol($profile )(\($region\) )]($style) ($expiration_symbol)'
+symbol =  '🌩️ '
+expiration_symbol = '☃ '
+[aws.region_aliases]
+us-east-1 = 'iad'
+us-east-2 = 'cmh'
+eu-central-1 = 'fra'
+eu-west-2 = 'lhr'
+us-west-2 = 'pdx'
+us-west-1 = 'sfo'
+ap-southeast-2 = 'syd'
+ca-central-1 = 'yul'
+
+# Shows current git branch
+[git_branch]
+symbol = " "
+format = "via [$symbol$branch]($style) "
+# truncation_length = 4
+truncation_symbol = "…/"
+style = "bold green"
+
+# Shows current git status
+[git_status]
+format = '[\($all_status$ahead_behind\)]($style) '
+style = "bold green"
+conflicted = "🏳"
+up_to_date = " "
+untracked = " "
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
+stashed = " "
+modified = " "
+staged = '[++\($count\)](green)'
+renamed = "襁 "
+deleted = " "
+
+[git_state]
+disabled = true
+
+[kubernetes]
+format = '[connected to $symbol$context(within \($namespace\) ) ]($style)'
+disabled = false
+[kubernetes.context_aliases]
+'arn:aws:eks:[^:]+:[^:]+:cluster/(?P<cluster_name>[^:]+)' = '$cluster_name'
+
+[golang]
+format = '(via [$symbol($version )]($style))'
+
+[helm]
+format = '(via [$symbol($version )]($style))'
+
+[nodejs]
+format = '(via [$symbol($version )]($style))'
+
+[python]
+format = '(via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style))'
+
+[rust]
+format = '(via [$symbol($version )]($style))'
+
+[swift]
+format = '(via [$symbol($version )]($style))'
+
+[vagrant]
+format = '(via [$symbol($version )]($style))'
+
+[c]
+format = '(via [$symbol($version(-$name) )]($style))'
+
+[deno]
+format = '(via [$symbol($version )]($style))'
+
+[dotnet]
+format = '(via [$symbol($version )(🎯 $tfm )]($style))'
+
+[rlang]
+disabled = true
+
+[ruby]
+disabled = true
+
+[perl]
+disabled = true
+
+[haskell]
+disabled = true
+
+[java]
+disabled = true
