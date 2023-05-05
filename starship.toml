@@ -37,9 +37,12 @@ ca-central-1 = 'yul'
 [git_branch]
 symbol = " "
 format = "via [$symbol$branch]($style) "
-# truncation_length = 4
+truncation_length = 24
 truncation_symbol = "…/"
 style = "bold green"
+
+[git_state]
+disabled = true
 
 # Shows current git status
 [git_status]
@@ -56,9 +59,6 @@ modified = " "
 staged = '[++\($count\)](green)'
 renamed = "襁 "
 deleted = " "
-
-[git_state]
-disabled = true
 
 [kubernetes]
 format = '[connected to $symbol$context(within \($namespace\) ) ]($style)'
