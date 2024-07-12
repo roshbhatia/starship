@@ -10,14 +10,17 @@
 #      /__/:/          \__\/    \  \:\        \  \:\         /__/:/       \  \:\         \__\/      \  \:\  
 #      \__\/                     \__\/         \__\/         \__\/         \__\/                     \__\/  
 
-add_newline = true  # Inserts a blank line between shell prompts
 
-format = """↓↓↓ $all"""  # Add custom formatting before other stuff
+command_timeout = 300
+
+add_newline = false
+format = """ |λ|⇨ $all"""  # Add custom formatting before other stuff
 
 # Drop ugly default prompt characters
 [character]
-success_symbol = ""
-error_symbol = ""
+success_symbol = "[➜](bold green)"
+error_symbol = "[➜](bold red)"
+
 
 [aws]
 format = 'on [$symbol($profile )(\($region\) )]($style) ($expiration_symbol)'
@@ -35,7 +38,7 @@ ca-central-1 = 'yul'
 
 # Shows current git branch
 [git_branch]
-symbol = " "
+symbol = "🌿 "
 format = "via [$symbol$branch]($style) "
 truncation_length = 24
 truncation_symbol = "…/"
